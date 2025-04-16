@@ -7,7 +7,6 @@ This project aims to build a machine learning model that predicts the likelihood
 - **Python**
 - **Pandas** & **NumPy**: for data handling
 - **Scikit-learn**: for machine learning models (Logistic Regression, Random Forest)
-- **Matplotlib**: for data visualisation
 - **Streamlit**: for building an interactive dashboard
 - **NASA NEO API**: for real-time and historical asteroid data
 
