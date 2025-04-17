@@ -63,14 +63,33 @@ def save_data_to_excel(df: pd.DataFrame, path: str):
     df.to_excel(path, index=False)
     print(f"✅ Data saved to {path}")
 
+def fetch_past_data(days_back: int = 365):
+    """
+    Fetch NEO data for a given number of past days in 7-day chunks.
+    """
+    start = datetime.today().date() - timedelta(days=days_back)
+    end = datetime.today().date()
+    all_data = []
+
+    while start < end:
+        range_end = start + timedelta(days=7)
+        if range_end > end:
+            range_end = end
+
+        print(f"📡 Fetching data: {start} → {range_end}")
+        try:
+            raw = fetch_neo_data(str(start), str(range_end))
+            flat = flatten_neo_data(raw)
+            all_data.append(flat)
+        except Exception as e:
+            print(f"❌ Failed for {start}: {e}")
+
+        start += timedelta(days=7)
+
+    full_df = pd.concat(all_data, ignore_index=True)
+    save_data_to_excel(full_df, f"data/raw/neo_data_past_{days_back}_days.xlsx")
+    print(f"✅ Done! {days_back} days of NEO data collected and saved.")
+
 # Test
 if __name__ == "__main__":
-    today = datetime.today().date()
-    next_week = today + timedelta(days=7)
-
-    print("📡 Fetching data from NASA API...")
-    raw_data = fetch_neo_data(str(today), str(next_week))
-    df = flatten_neo_data(raw_data)
-    print(df)
-
-    save_data_to_excel(df, "data/raw/neo_data.xlsx")
+    fetch_past_data(days_back=365)

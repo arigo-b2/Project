@@ -1,43 +1,51 @@
 import pandas as pd
 import numpy as np
-
-# Torino Scale Threat Level Calculation:
-# -------------------------------------------------------------------
-# According to NASA and the Torino Scale, an asteroid's threat level
-# depends on two main factors:
-# 1. Collision Probability  → how likely it is to hit Earth
-# 2. Kinetic Energy         → how damaging it would be if it did
-#
-# In this project, we simulate that using:
-# - Miss Distance           → proxy for inverse collision probability
-# - Kinetic Energy          → estimated from diameter^3 and velocity^2
-#
-# These are used to create a "Torino-like" score, which we convert
-# to an integer 0–10 level to resemble the official Torino Scale.
-#
-# ⚠️ Reference: https://carlkop.home.xs4all.nl/torino.html
-# -------------------------------------------------------------------
+from sklearn.preprocessing import MinMaxScaler
 
 def calculate_average_diameter(row):
-    """
-    Calculate average estimated diameter in km.
-    """
     return (row['diameter_min_km'] + row['diameter_max_km']) / 2
 
 def calculate_kinetic_energy(row):
-    """
-    Estimate kinetic energy using: KE ~ 0.5 * mass * velocity^2
-    Assume mass ∝ diameter^3 (simplified proxy).
-    """
-    diameter = row['avg_diameter_km']
-    velocity = row['velocity_km_s']
-    estimated_mass = diameter ** 3
-    return 0.5 * estimated_mass * (velocity ** 2)
+    return (row['avg_diameter_km'] ** 3) * (row['velocity_km_s'] ** 2)
 
-def calculate_torino_proxy_score(row):
-    """
-    Estimate a Torino-like score based on kinetic energy and miss distance.
-    """
-    if row['miss_distance_km'] == 0:
-        return 10  # Treat direct hits as max threat
-    return row['kinetic_energy'] / row['miss_distance_km']
+def generate_regression_features(df):
+    df = df.copy()
+
+    # Derived columns
+    df['avg_diameter_km'] = df.apply(calculate_average_diameter, axis=1)
+    df = df.dropna(subset=[
+        'velocity_km_s',
+        'absolute_magnitude_h',
+        'avg_diameter_km',
+        'miss_distance_km'
+    ])
+    df['kinetic_energy'] = df.apply(calculate_kinetic_energy, axis=1)
+
+    # Feature columns
+    features = [
+        'velocity_km_s',
+        'absolute_magnitude_h',
+        'avg_diameter_km',
+        'kinetic_energy'
+    ]
+    target = 'miss_distance_km'
+
+    # Scaling
+    scaler = MinMaxScaler()
+    df[[f + '_scaled' for f in features]] = scaler.fit_transform(df[features])
+
+    # Output
+    X = df[[f + '_scaled' for f in features]]
+    y = df[target]
+
+    return X, y, df
+
+# Test
+if __name__ == "__main__":
+    input_path = "data/raw/neo_data.xlsx"
+    output_path = "data/processed/neo_features_for_regression.xlsx"
+
+    df = pd.read_excel(input_path)
+    X, y, df_full = generate_regression_features(df)
+    df_full.to_excel(output_path, index=False)
+    print(f"✅ Regression features saved to: {output_path}")
