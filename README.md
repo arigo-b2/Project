@@ -1,45 +1,38 @@
-## 🌍 Deep Impact: Machine Learning–Powered Asteroid Collision Risk Analyser
+## 🌍 TrajectoryAI: Forecasting Asteroid-Earth Approaches with Machine Learning
 
 ### 🌍 Overview
-This project uses NASA's Near Earth Object (NEO) data to build a machine learning model that predicts the risk level of an asteroid based on its physical and orbital characteristics. It uses classification techniques to determine whether an asteroid poses a potential threat and optionally estimates the threat level using the Torino Impact Hazard Scale.
+This project uses NASA's Near Earth Object (NEO) data to build a machine learning model that predicts **how close an asteroid will come to Earth** based on its physical and orbital characteristics. The model estimates the asteroid's **miss distance** (in kilometers) using supervised regression, enabling better understanding of NEO behavior and potential near-Earth threats.
+
 
 ### 🚀 Objective
-To classify and score the risk of asteroids colliding with Earth using supervised learning, with outputs inspired by the [Torino Scale](https://cneos.jpl.nasa.gov/sentry/torino_scale.html). The app can simulate asteroid entries and visualize the predicted threat.
+To predict the **closest approach distance** of asteroids using machine learning. The model is trained on real NASA data using features like size, speed, brightness, and derived kinetic energy to estimate the proximity of asteroids to Earth. The project aims to support proactive risk analysis and threat assessment.
 
 
-### 📊 About the Torino Scale
-The [Torino Impact Hazard Scale](https://cneos.jpl.nasa.gov/sentry/torino_scale.html) is a 0–10 scale used by astronomers to communicate the risk of an asteroid or comet impacting Earth.
-
-| Level | Description            | Meaning                                                                 |
-|-------|------------------------|-------------------------------------------------------------------------|
-| 0     | No hazard              | Chance of collision is zero or effectively zero.                       |
-| 1     | Normal                 | Regular monitoring, but no cause for public concern.                   |
-| 2–4   | Merits attention       | Close approaches; needs more observation.                              |
-| 5–7   | Threatening            | Significant risk; public and government attention is warranted.        |
-| 8–10  | Certain collisions     | Likely or certain impacts with potential for regional to global damage.|
-
-In this project, a proxy Torino score is derived from a combination of estimated kinetic energy and miss distance. The score is categorized into levels resembling the Torino scale, and can be visualized in the Streamlit dashboard.
+### 📏 Why Miss Distance?
+The **miss distance** (`miss_distance_km`) represents how close a NEO comes to Earth during its approach. This distance, when combined with speed and size, helps determine the severity of potential encounters. By learning to estimate miss distance, the model offers insights into:
+- Which asteroids might come unusually close
+- How early-stage NEO observations relate to final approach behavior
 
 ### 📁 Current Features
-- Fetches asteroid data from NASA NeoWs API
-- Cleans and flattens nested JSON into tabular format
-- Supports Excel export of raw asteroid data
-- Designed to estimate risk level using features like diameter, velocity, and distance
+- Fetches and processes raw asteroid data using the NASA NeoWs API
+- Calculates physical proxies like average diameter and kinetic energy
+- Builds a machine learning–ready dataset for regression
+- Predicts miss distance based on NEO features
 
 ### 📊 Technologies & Tools
 
 - **Python**
 - **Pandas** & **NumPy**: for data handling
-- **Scikit-learn**: for machine learning models (Logistic Regression, Random Forest)
+- **Scikit-learn**: for machine learning models (Random Forest Regressor)
 - **Streamlit**: for building an interactive dashboard
 - **NASA NEO API**: for real-time and historical asteroid data
 
 ### 🧠 In Progress
-- Feature engineering: velocity, kinetic energy, scaled distances
-- Model training and evaluation (classification or risk scoring)
-- Streamlit dashboard with Torino scale visual and live predictions
+- Feature engineering: velocity, brightness, kinetic energy
+- Model evaluation (MAE, RMSE, R²)
+- Visualizations: predicted vs actual proximity
+- Streamlit app for interactive asteroid input and prediction
 
 ### 🛰️ Credits
-
 Developed as part of an independent project to explore AI for planetary defense.  
 Data provided by NASA's Near-Earth Object Program.
