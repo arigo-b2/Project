@@ -34,7 +34,7 @@ In this project, a proxy Torino score is derived from a combination of estimated
 - **Streamlit**: for building an interactive dashboard
 - **NASA NEO API**: for real-time and historical asteroid data
 
-### s🧠 In Progress
+### 🧠 In Progress
 - Feature engineering: velocity, kinetic energy, scaled distances
 - Model training and evaluation (classification or risk scoring)
 - Streamlit dashboard with Torino scale visual and live predictions
