@@ -13,5 +13,5 @@ COPY . .
 # Expose the default Streamlit port
 EXPOSE 8501
 
-# placeholder 
+# placeholder
 CMD ["python3"]
