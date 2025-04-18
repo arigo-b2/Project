@@ -6,8 +6,7 @@ This project uses NASA's Near Earth Object (NEO) data to build a machine learnin
 ### 🚀 Objective
 To predict the **threat level of NEOs** using supervised regression based on publicly available NASA data. The model uses features such as relative velocity, brightness, and average diameter to determine how dangerous a given asteroid is, relative to its potential energy and distance from Earth.
 
-**Random Forest Regressor** is applied to learn from historical data and evaluate performance using common regression metrics:  
-**Mean Absolute Error (MAE)**, **Root Mean Squared Error (RMSE)**, and **R² Score**.
+**Random Forest Regressor** is applied to learn from historical data and evaluate performance using regression metrics: Mean Absolute Error (MAE), Root Mean Squared Error (RMSE),and R² Score.
 
 ---
 
