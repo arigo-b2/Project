@@ -28,11 +28,6 @@ def generate_risk_features(df):
     df['raw_risk_score'] = df['kinetic_energy'] / df['miss_distance_km']
     df['log_risk_score'] = np.log1p(df['raw_risk_score'])  # TARGET
 
-    # Extra features
-    df['diameter_range'] = df['diameter_max_km'] - df['diameter_min_km']
-    df['diameter_ratio'] = df['diameter_max_km'] / df['diameter_min_km']
-    df['log_velocity'] = np.log1p(df['velocity_km_s'])
-
     # Final features to use
     features = [
         'velocity_km_s',
