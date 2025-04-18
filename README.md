@@ -1,37 +1,42 @@
-## 🌍 TrajectoryAI: Forecasting Asteroid-Earth Approaches with Machine Learning
+## ☄️ Deep Impact: Machine Learning–Powered Asteroid Collision Risk Analyser
 
 ### 🌍 Overview
-This project uses NASA's Near Earth Object (NEO) data to build a machine learning model that predicts **how close an asteroid will come to Earth** based on its physical and orbital characteristics. The model estimates the asteroid's **miss distance** (in kilometers) using supervised regression, enabling better understanding of NEO behavior and potential near-Earth threats.
-
+This project uses NASA's Near Earth Object (NEO) data to build a machine learning model that predicts the **threat level of asteroids approaching Earth** based on their physical and orbital characteristics. The model estimates a physics-informed risk score using features like velocity, size, brightness, and derived kinetic energy — enabling better insight into NEO danger potential.
 
 ### 🚀 Objective
-To predict the **closest approach distance** of asteroids using machine learning. The model is trained on real NASA data using features like size, speed, brightness, and derived kinetic energy to estimate the proximity of asteroids to Earth. The project aims to support proactive risk analysis and threat assessment.
+To predict the **threat level of NEOs** using supervised regression based on publicly available NASA data. The model uses features such as relative velocity, brightness, and average diameter to determine how dangerous a given asteroid is, relative to its potential energy and distance from Earth.
 
+**Random Forest Regressor** is applied to learn from historical data and evaluate performance using common regression metrics:  
+**Mean Absolute Error (MAE)**, **Root Mean Squared Error (RMSE)**, and **R² Score**.
 
-### 📏 Why Miss Distance?
-The **miss distance** (`miss_distance_km`) represents how close a NEO comes to Earth during its approach. This distance, when combined with speed and size, helps determine the severity of potential encounters. By learning to estimate miss distance, the model offers insights into:
-- Which asteroids might come unusually close
-- How early-stage NEO observations relate to final approach behavior
+---
 
-### 📁 Current Features
-- Fetches and processes raw asteroid data using the NASA NeoWs API
-- Calculates physical proxies like average diameter and kinetic energy
-- Builds a machine learning–ready dataset for regression
-- Predicts miss distance based on NEO features
+### 🧠 Current Features
+- Collects and processes real asteroid data using the NASA NeoWs API
+- Engineers physics-aware features such as kinetic energy and average size
+- Builds a machine learning–ready dataset with scaled inputs and log-transformed risk targets
+- Trains a **Random Forest Regressor** to predict asteroid threat levels
+- Evaluates model using **MAE, RMSE, and R²** (achieving **R² ≈ 0.95** on unseen data)
+
+---
 
 ### 📊 Technologies & Tools
 
 - **Python**
-- **Pandas** & **NumPy**: for data handling
-- **Scikit-learn**: for machine learning models (Random Forest Regressor)
-- **Streamlit**: for building an interactive dashboard
-- **NASA NEO API**: for real-time and historical asteroid data
+- **Pandas** & **NumPy**: for data preprocessing and analysis
+- **Scikit-learn**: for machine learning modeling
+- **Streamlit**: for planned deployment of a threat assessment dashboard
+- **NASA NEO API**: for real-time and historical asteroid flyby data
+
+---
 
 ### 🧠 In Progress
-- Feature engineering: velocity, brightness, kinetic energy
-- Model evaluation (MAE, RMSE, R²)
-- Visualizations: predicted vs actual proximity
-- Streamlit app for interactive asteroid input and prediction
+- Interactive dashboard for threat score predictions
+- Model interpretability (feature importance, SHAP)
+- Option to simulate hypothetical asteroid input for risk estimation
+- Visual charts for predicted vs actual threat behavior
+
+---
 
 ### 🛰️ Credits
 Developed as part of an independent project to explore AI for planetary defense.  
