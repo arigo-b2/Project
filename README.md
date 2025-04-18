@@ -8,7 +8,6 @@ To predict the **threat level of NEOs** using supervised regression based on pub
 
 **Random Forest Regressor** is applied to learn from historical data and evaluate performance using regression metrics: Mean Absolute Error (MAE), Root Mean Squared Error (RMSE),and R² Score.
 
----
 
 ### 🧠 Current Features
 - Collects and processes real asteroid data using the NASA NeoWs API
@@ -17,7 +16,6 @@ To predict the **threat level of NEOs** using supervised regression based on pub
 - Trains a **Random Forest Regressor** to predict asteroid threat levels
 - Evaluates model using **MAE, RMSE, and R²** (achieving **R² ≈ 0.95** on unseen data)
 
----
 
 ### 📊 Technologies & Tools
 
@@ -27,7 +25,6 @@ To predict the **threat level of NEOs** using supervised regression based on pub
 - **Streamlit**: for planned deployment of a threat assessment dashboard
 - **NASA NEO API**: for real-time and historical asteroid flyby data
 
----
 
 ### 🧠 In Progress
 - Interactive dashboard for threat score predictions
