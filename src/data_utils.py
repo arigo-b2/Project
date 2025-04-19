@@ -28,7 +28,7 @@ def flatten_neo_data(raw_json: dict) -> pd.DataFrame:
     asteroids = raw_json.get("near_earth_objects", {})
     all_asteroids = []
 
-    for date, asteroid_list in asteroids.items():
+    for asteroid_list in asteroids.items():
         for asteroid in asteroid_list:
             try:
                 approach = asteroid.get("close_approach_data", [{}])[0]
