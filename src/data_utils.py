@@ -10,7 +10,7 @@ NASA_API_URL = "https://api.nasa.gov/neo/rest/v1/feed"
 
 def fetch_neo_data(start_date: str, end_date: str, api_key: str = API_KEY) -> dict:
     """
-    Fetch Near-Earth Object data from NASA's NeoWs API.
+    Fetch Near-Earth Object data from NASA's NeoWs API between two dates.
     """
     params = {
         "start_date": start_date,
