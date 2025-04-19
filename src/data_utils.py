@@ -5,7 +5,7 @@ from datetime import datetime, timedelta
 from dotenv import load_dotenv
 
 load_dotenv()
-API_KEY = os.getenv("NASA_API_KEY", "LATER ALLIGATOR GIT IGNORE")
+API_KEY = os.getenv("NASA_API_KEY")
 NASA_API_URL = "https://api.nasa.gov/neo/rest/v1/feed"
 
 def fetch_neo_data(start_date: str, end_date: str, api_key: str = API_KEY) -> dict:
