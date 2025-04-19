@@ -1,7 +1,7 @@
 ## ☄️ Deep Impact: Machine Learning–Powered Asteroid Collision Risk Analyser
 
 ### 🌍 Overview
-This project uses NASA's Near Earth Object (NEO) data to build a machine learning model that predicts the **threat level of asteroids approaching Earth** based on their physical and orbital characteristics. The model estimates a physics-informed risk score using features like velocity, size, brightness, and derived kinetic energy — enabling better insight into NEO danger potential.
+This project uses NASA's Near Earth Object (NEO) data to build a machine learning model that predicts the threat level of asteroids approaching Earth based on their physical and orbital characteristics. The model estimates a physics-informed risk score using features like velocity, size, brightness, and derived kinetic energy — enabling better insight into NEO danger potential.
 
 ### 🚀 Objective
 To predict the **threat level of NEOs** using supervised regression based on publicly available NASA data. The model uses features such as relative velocity, brightness, and average diameter to determine how dangerous a given asteroid is, relative to its potential energy and distance from Earth.
@@ -28,7 +28,7 @@ To predict the **threat level of NEOs** using supervised regression based on pub
 
 ### 🧠 In Progress
 - Interactive dashboard for threat score predictions
-- Model interpretability (feature importance, SHAP)
+- Model interpretability (feature importance)
 - Option to simulate hypothetical asteroid input for risk estimation
 - Visual charts for predicted vs actual threat behavior
 
