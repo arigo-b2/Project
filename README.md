@@ -13,8 +13,8 @@ To predict the **threat level of NEOs** using supervised regression based on pub
 - Collects and processes real asteroid data using the NASA NeoWs API
 - Engineers physics-aware features such as kinetic energy and average size
 - Builds a machine learning–ready dataset with scaled inputs and log-transformed risk targets
-- Trains a **Random Forest Regressor** to predict asteroid threat levels
-- Evaluates model using **MAE, RMSE, and R²** (achieving **R² ≈ 0.95** on unseen data)
+- Trains a Random Forest Regressor to predict asteroid threat levels
+- Evaluates model using MAE, RMSE, and R² (achieving R² ≈ 0.95 on unseen data)
 
 
 ### 📊 Technologies & Tools
@@ -23,7 +23,7 @@ To predict the **threat level of NEOs** using supervised regression based on pub
 - **Pandas** & **NumPy**: for data preprocessing and analysis
 - **Scikit-learn**: for machine learning modeling
 - **Streamlit**: for planned deployment of a threat assessment dashboard
-- **NASA NEO API**: for real-time and historical asteroid flyby data
+- **NASA NEO API**: for real-time and historical asteroid data
 
 
 ### 🧠 In Progress
