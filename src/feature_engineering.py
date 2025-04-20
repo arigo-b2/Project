@@ -39,7 +39,6 @@ def generate_risk_features(df):
         'avg_diameter_km',
         'kinetic_energy'
     ]
-    target = 'log_risk_score'
 
     # Scale input features
     scaler = MinMaxScaler()
