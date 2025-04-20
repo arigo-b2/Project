@@ -1,13 +1,15 @@
+import os
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_absolute_error, root_mean_squared_error, r2_score
 import joblib
-import os
+
+DATA_PATH_PROCESSED = os.getenv("DATA_PATH_PROCESSED")
 
 # Load processed dataset
-data_path = "data/processed/neo_features_for_risk_regression.xlsx"
+data_path = f"{DATA_PATH_PROCESSED}/neo_features_for_risk_regression.xlsx"
 df = pd.read_excel(data_path)
 
 # Input features (scaled)
