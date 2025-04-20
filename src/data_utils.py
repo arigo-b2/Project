@@ -39,6 +39,7 @@ def flatten_neo_data(raw_json: dict) -> pd.DataFrame:
                     "name": asteroid.get("name"),
                     "id": asteroid.get("id"),
                     "absolute_magnitude_h": asteroid.get("absolute_magnitude_h"),
+                    "is_hazardous": asteroid.get("is_potentially_hazardous_asteroid"),
                     "diameter_min_km": diameter_data.get("estimated_diameter_min"),
                     "diameter_max_km": diameter_data.get("estimated_diameter_max"),
                     "velocity_km_s": float(approach.get("relative_velocity", {}).get("kilometers_per_second", 0.0)),
