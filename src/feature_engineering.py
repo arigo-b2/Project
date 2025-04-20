@@ -53,6 +53,6 @@ if __name__ == "__main__":
     output_path = f"{DATA_PATH_PROCESSED}/neo_features_for_risk_regression.xlsx"
 
     df = pd.read_excel(input_path)
-    X, y, df_full = generate_risk_features(df)
+    df_full = generate_risk_features(df)
     df_full.to_excel(output_path, index=False)
     print(f"✅ Processed risk features saved to: {output_path}")
