@@ -45,10 +45,6 @@ def generate_risk_features(df):
     scaler = MinMaxScaler()
     df[[f + '_scaled' for f in features]] = scaler.fit_transform(df[features])
 
-    # Final X, y
-    X = df[[f + '_scaled' for f in features]]
-    y = df[target]
-
     return X, y, df
 
 # Test
