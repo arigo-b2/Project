@@ -6,7 +6,8 @@ from dotenv import load_dotenv
 
 load_dotenv()
 API_KEY = os.getenv("NASA_API_KEY")
-NASA_API_URL = "https://api.nasa.gov/neo/rest/v1/feed"
+API_URL = os.getenv("NASA_API_URL")
+DATA_PATH_RAW = os.getenv("DATA_PATH_RAW")
 
 def fetch_neo_data(start_date: str, end_date: str, api_key: str = API_KEY) -> dict:
     """
@@ -17,7 +18,7 @@ def fetch_neo_data(start_date: str, end_date: str, api_key: str = API_KEY) -> di
         "end_date": end_date,
         "api_key": api_key
     }
-    response = requests.get(NASA_API_URL, params=params)
+    response = requests.get(API_URL, params=params)
     response.raise_for_status()
     return response.json()
 
@@ -87,7 +88,7 @@ def fetch_past_data(days_back: int = 365):
         start += timedelta(days=7)
 
     full_df = pd.concat(all_data, ignore_index=True)
-    save_data_to_excel(full_df, f"data/raw/neo_data_past_{days_back}_days.xlsx")
+    save_data_to_excel(full_df, f"{DATA_PATH_RAW}/neo_data_past_{days_back}_days.xlsx")
     print(f"✅ Done! {days_back} days of NEO data collected and saved.")
 
 # Test
