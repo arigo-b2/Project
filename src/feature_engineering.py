@@ -1,6 +1,10 @@
+import os
 import pandas as pd
 import numpy as np
 from sklearn.preprocessing import MinMaxScaler
+
+DATA_PATH_RAW = os.getenv("DATA_PATH_RAW")
+DATA_PATH_PROCESSED = os.getenv("DATA_PATH_PROCESSED")
 
 def calculate_average_diameter(row):
     return (row['diameter_min_km'] + row['diameter_max_km']) / 2
@@ -49,8 +53,8 @@ def generate_risk_features(df):
 
 # Test
 if __name__ == "__main__":
-    input_path = "data/raw/neo_data.xlsx"
-    output_path = "data/processed/neo_features_for_risk_regression.xlsx"
+    input_path = f"{DATA_PATH_RAW}/neo_data.xlsx"
+    output_path = f"{DATA_PATH_PROCESSED}/neo_features_for_risk_regression.xlsx"
 
     df = pd.read_excel(input_path)
     X, y, df_full = generate_risk_features(df)
