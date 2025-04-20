@@ -88,9 +88,9 @@ def fetch_past_data(days_back: int = 365):
         start += timedelta(days=7)
 
     full_df = pd.concat(all_data, ignore_index=True)
-    save_data_to_excel(full_df, f"{DATA_PATH_RAW}/neo_data_past_{days_back}_days.xlsx")
+    save_data_to_excel(full_df, f"{DATA_PATH_RAW}/neo_data.xlsx")
     print(f"✅ Done! {days_back} days of NEO data collected and saved.")
 
 # Test
 if __name__ == "__main__":
-    fetch_past_data(days_back=365)
+    fetch_past_data()
