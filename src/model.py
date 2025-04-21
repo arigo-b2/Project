@@ -2,9 +2,10 @@ import os
 import joblib
 import pandas as pd
 import numpy as np
-from sklearn.model_selection import train_test_split
+from sklearn.model_selection import train_test_split, RandomizedSearchCV
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_absolute_error, root_mean_squared_error, r2_score
+from scipy.stats import randint
 from visualisation import plot_feature_importance
 
 DATA_PATH_PROCESSED = os.getenv("DATA_PATH_PROCESSED")
@@ -29,9 +30,32 @@ X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.2, random_state=42
 )
 
-# Train Random Forest
-model = RandomForestRegressor(n_estimators=100, random_state=42)
-model.fit(X_train, y_train)
+# Hyperparameter search space
+param_dist = {
+    'n_estimators': randint(100, 300),
+    'max_depth': [None, 10, 20, 30],
+    'min_samples_split': [2, 5, 10],
+    'max_features': ['auto', 'sqrt', 'log2']
+}
+
+# Randomized search
+search = RandomizedSearchCV(
+    estimator=RandomForestRegressor(random_state=42),
+    param_distributions=param_dist,
+    n_iter=20,
+    scoring='neg_mean_absolute_error',
+    cv=5,
+    n_jobs=-1,
+    verbose=1,
+    random_state=42
+)
+
+print("🔍 Running hyperparameter tuning...")
+search.fit(X_train, y_train)
+model = search.best_estimator_
+
+print("✅ Best hyperparameters found:")
+print(search.best_params_)
 
 # Predict
 y_pred_log = model.predict(X_test)
