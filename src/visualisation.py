@@ -24,4 +24,3 @@ def plot_feature_importance(model, X, save_path: str = None):
         plt.savefig(save_path)
         print(f"📊 Saved feature importance plot to: {save_path}")
     plt.show()
-

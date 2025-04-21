@@ -1,10 +1,11 @@
 import os
+import joblib
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_absolute_error, root_mean_squared_error, r2_score
-import joblib
+from visualisation import plot_feature_importance
 
 DATA_PATH_PROCESSED = os.getenv("DATA_PATH_PROCESSED")
 
@@ -54,3 +55,5 @@ print(f"Root Mean Squared Error: {rmse:,.2f}")
 os.makedirs("models", exist_ok=True)
 joblib.dump(model, "models/rf_risk_model.pkl")
 print("✅ Model saved to models/rf_risk_model.pkl")
+
+plot_feature_importance(model, X, "reports/figures/feature_importance_rf.png")
