@@ -32,19 +32,19 @@ X_train, X_test, y_train, y_test = train_test_split(
 
 # Hyperparameter search space
 param_dist = {
-    'n_estimators': randint(100, 300),
-    'max_depth': [None, 10, 20, 30],
-    'min_samples_split': [2, 5, 10],
-    'max_features': ['auto', 'sqrt', 'log2']
+    'n_estimators': randint(100, 200),
+    'max_depth': [None, 10, 20],
+    'min_samples_split': [2, 5],
+    'max_features': ['sqrt', 'log2', None]
 }
 
 # Randomized search
 search = RandomizedSearchCV(
     estimator=RandomForestRegressor(random_state=42),
     param_distributions=param_dist,
-    n_iter=20,
+    n_iter=5,
     scoring='neg_mean_absolute_error',
-    cv=5,
+    cv=4,
     n_jobs=-1,
     verbose=1,
     random_state=42
@@ -71,9 +71,9 @@ r2 = r2_score(y_test_score, y_pred_score)
 
 # Print results
 print("✅ Model Evaluation (risk_score prediction):")
-print(f"R² Score:              {r2:.3f}")
-print(f"Mean Absolute Error:   {mae:,.2f}")
-print(f"Root Mean Squared Error: {rmse:,.2f}")
+print(f"R² Score:              {r2:.10f}")
+print(f"Mean Absolute Error:   {mae:,.10f}")
+print(f"Root Mean Squared Error: {rmse:,.10f}")
 
 # Save model
 os.makedirs("models", exist_ok=True)

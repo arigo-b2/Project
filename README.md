@@ -3,10 +3,11 @@
 ### 🌍 Overview
 This project uses NASA's Near Earth Object (NEO) data to build a machine learning model that predicts the threat level of asteroids approaching Earth based on their physical and orbital characteristics. The model estimates a physics-informed risk score using features like velocity, size, brightness, and derived kinetic energy — enabling better insight into NEO danger potential.
 
-### 🚀 Objective
-To predict the threat level of NEOs using supervised regression based on publicly available NASA data. The model uses features such as relative velocity, brightness, and average diameter to determine how dangerous a given asteroid is, relative to its potential energy and distance from Earth.
+This project uses real-world NASA Near-Earth Object (NEO) data to build a machine learning model that estimates the threat level posed by asteroids approaching Earth. Using physics-inspired features such as kinetic energy, brightness, and estimated diameter, the model predicts a log-transformed threat score representing potential impact severity.
 
-**Random Forest Regressor** is applied to learn from historical data and evaluate performance using regression metrics: Mean Absolute Error (MAE), Root Mean Squared Error (RMSE),and R² Score.
+
+### 🚀 Objective
+To estimate and prioritise asteroid collision risk based on orbital and physical parameters using a supervised regression model. The final output can support planetary defense insights by ranking objects with the highest predicted threat.
 
 
 ### 🧠 Current Features
