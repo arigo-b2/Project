@@ -56,4 +56,4 @@ os.makedirs("models", exist_ok=True)
 joblib.dump(model, "models/rf_risk_model.pkl")
 print("✅ Model saved to models/rf_risk_model.pkl")
 
-plot_feature_importance(model, X, "reports/figures/feature_importance_rf.png")
+plot_feature_importance(model, X, "reports/figures/feature_importance_rf_hp_tuning.png")
