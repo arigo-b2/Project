@@ -66,7 +66,7 @@ with tab1:
 
     # Visual interpretation
     st.markdown("### 🌌 NASA Asteroid 3D Viewer")
-    components.iframe("https://eyes.nasa.gov/apps/asteroids/#/67p_churyumov_gerasimenko", height=700)
+    components.iframe("https://eyes.nasa.gov/apps/asteroids/#/watch/2025_gd1", height=700)
 
 with tab2:
     st.header("📊 Explore Sample Risk Scores")
