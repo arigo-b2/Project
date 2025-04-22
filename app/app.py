@@ -66,7 +66,7 @@ with tab1:
 
     # Visual interpretation
     st.markdown("### 🌌 NASA Asteroid 3D Viewer")
-    components.iframe("https://eyes.nasa.gov/apps/asteroids/#/", height=500)
+    components.iframe("https://eyes.nasa.gov/apps/asteroids/#/99942_apophis", height=500)
 
 with tab2:
     st.header("📊 Explore Sample Risk Scores")
@@ -87,5 +87,6 @@ with tab2:
         - 2–4 = Merits attention
         - 5–7 = Threatening
         - 8–10 = Certain collision
-        This model uses a proxy risk score based on physical energy and miss distance.
+        
+        This model uses a proxy risk score based on kinetic energy and miss distance.
         """)
