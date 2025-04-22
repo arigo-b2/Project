@@ -67,3 +67,25 @@ with tab1:
     # Visual interpretation
     st.markdown("### 🌌 NASA Asteroid 3D Viewer")
     components.iframe("https://eyes.nasa.gov/apps/asteroids/#/", height=500)
+
+with tab2:
+    st.header("📊 Explore Sample Risk Scores")
+
+    sample_scores = [predicted_risk, 1e-6, 1e-3, 1e-2]
+    labels = ["Your Input", "Safe Object", "Close Call", "High Risk"]
+
+    fig, ax = plt.subplots()
+    sns.barplot(x=labels, y=sample_scores, palette=["orange", "green", "yellow", "red"], ax=ax)
+    ax.set_ylabel("Risk Score (Proxy)")
+    ax.set_title("Risk Score Comparison")
+    st.pyplot(fig)
+
+    with st.expander("📘 About the Torino Scale"):
+        st.markdown("""
+        The [Torino Scale](https://cneos.jpl.nasa.gov/sentry/torino_scale.html) is a 0–10 scale used by astronomers to communicate asteroid impact risk:
+        - 0 = No hazard
+        - 2–4 = Merits attention
+        - 5–7 = Threatening
+        - 8–10 = Certain collision
+        This model uses a proxy risk score based on physical energy and miss distance.
+        """)
