@@ -85,3 +85,7 @@ with tab1:
     with right:
         st.subheader("🔭 Risk Assessment")
         st.markdown(interpretation)
+
+    # NASA visual
+    st.markdown("### 🌌 NASA Asteroid 3D Viewer")
+    components.iframe("https://eyes.nasa.gov/apps/asteroids/#/watch/", height=700)
