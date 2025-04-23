@@ -1,7 +1,7 @@
 import os
-import streamlit as st
 import numpy as np
 import joblib
+import streamlit as st
 import streamlit.components.v1 as components
 from dotenv import load_dotenv
 from asteroid_profiles import get_asteroid_data
