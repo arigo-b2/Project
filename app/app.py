@@ -26,3 +26,10 @@ with tab1:
     with col3:
         diameter_m = st.number_input("Average Diameter (m)", min_value=10.0, max_value=2000.0, value=100.0,
                                      help="Estimated average physical diameter of the asteroid (in meters).")
+
+    # Convert to km and km/s for model
+    velocity_kms = velocity_mps / 1000
+    diameter_km = diameter_m / 1000
+
+    # Calculate kinetic energy (proportional proxy)
+    kinetic_energy = (diameter_km ** 3) * (velocity_kms ** 2)
