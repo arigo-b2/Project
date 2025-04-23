@@ -104,3 +104,92 @@ with tab1:
 
 with tab2:
     st.subheader("🪐 Top 10 Asteroid Visualisations and Detailed Profiles")
+
+    asteroid_data = [
+        {
+            "name": "Apophis",
+            "slug": "99942_apophis",
+            "desc": """
+Apophis is a near-Earth asteroid approximately 370 meters in diameter, classified as an Aten-type asteroid. It became widely known after early orbit predictions suggested a small probability of Earth impact in 2029, which has since been ruled out. However, its close flyby at only 31,000 km—closer than geostationary satellites—makes it a perfect case study in planetary defense.  
+Apophis is primarily composed of silicate rock, with a relatively high albedo (reflectivity) and a tumbling spin state. Its orbit is slightly inclined and resonant, meaning gravitational interactions with Earth could subtly alter its future path. Due to its high velocity (around 30 km/s) and moderate size, it carries enough kinetic energy to cause continental-scale destruction if it were to impact.  
+<br>
+NASA and ESA are both closely tracking this object, and in 2029 it will be visible to the naked eye over parts of Earth, giving scientists a rare opportunity to study asteroid dynamics up close.
+"""
+        },
+        {
+            "name": "Bennu",
+            "slug": "101955_bennu",
+            "desc": """
+Bennu is a carbonaceous near-Earth asteroid about 490 meters in diameter and rich in primitive organic material. It orbits the Sun every 1.2 years and has a very Earth-like orbit, placing it in the Apollo group of asteroids.  
+Bennu is classified as a potentially hazardous asteroid (PHA) due to its high impact probability (1 in 1750 by 2300) and close Earth flybys, particularly in the late 2100s.  
+What makes Bennu remarkable is its role in planetary science—NASA’s OSIRIS-REx mission successfully collected samples from its surface in 2020, returning them to Earth in 2023. These samples are helping scientists understand the early solar system.  
+Bennu rotates once every 4.3 hours and has a "rubble pile" structure with loosely bound rocks and low density. A potential impact with Bennu would release energy equivalent to 1,200 megatons of TNT.
+"""
+        },
+        {
+            "name": "Florence",
+            "slug": "3122_florence",
+            "desc": """
+Florence is one of the largest known near-Earth asteroids, measuring a massive 4.4 kilometers in diameter. It passed safely by Earth in 2017 at a distance of 7 million km but remains a significant object due to its sheer size and mass.  
+Florence is particularly interesting because it has two small moons, making it one of the few triple asteroid systems ever observed in the near-Earth population. Its rotation period is about 2.4 hours, and its surface composition suggests a stony S-type asteroid.  
+While Florence currently poses no impact threat, its size gives it the potential to cause global-scale devastation in the extremely unlikely case of an Earth impact. Studies of Florence help refine radar imaging and orbital mechanics models for large NEOs.
+"""
+        },
+        {
+            "name": "2023 DW",
+            "slug": "2023_dw",
+            "desc": """
+2023 DW is a recently discovered asteroid approximately 50 meters in diameter, first observed in February 2023. It garnered attention due to an early estimate indicating a 1 in 560 chance of impacting Earth in 2046, although this has been revised downward with additional observations.  
+Its orbit is still being refined, but 2023 DW highlights the importance of early detection and impact probability modeling. Its relatively small size may not seem threatening, but similar-sized asteroids like the Chelyabinsk meteor (20m) in 2013 caused widespread damage due to airburst shockwaves.  
+2023 DW would likely disintegrate in the atmosphere under most impact scenarios, but could still pose a serious threat to populated regions if it enters at a shallow angle.  
+This asteroid is a strong candidate for upcoming observation campaigns and may influence future planetary defense strategies.
+"""
+        },
+        {
+            "name": "Didymos",
+            "slug": "65803_didymos",
+            "desc": """
+Didymos is a binary asteroid system consisting of a primary asteroid (~780 meters) and a moonlet called Dimorphos (~160 meters). It orbits the Sun every 2.1 years and is a member of the Apollo group of near-Earth asteroids.  
+Didymos gained global attention as the target of NASA’s DART mission (2022)—the first real-world test of asteroid deflection. DART successfully impacted Dimorphos, shortening its orbital period by 33 minutes, proving that kinetic impactors can alter asteroid trajectories.  
+The Didymos system is a crucial proof-of-concept for planetary defense technologies. Its binary nature also provides rare insight into tidal forces, mutual orbital evolution, and surface cohesion in small bodies.  
+While Didymos itself is not a threat, its configuration and accessibility make it one of the most important objects for long-term planetary risk reduction studies.
+"""
+        },
+        {
+            "name": "Toutatis",
+            "slug": "4179_toutatis",
+            "desc": """
+Toutatis is a highly elongated asteroid (~4.5 km long) with a tumbling, chaotic rotation that makes it one of the most unique objects observed. It passed Earth at a safe distance multiple times and was extensively imaged by radar and the Chang’e 2 mission. Its irregular motion provides valuable data on gravitational torques and non-uniform mass distribution in NEOs. While not a current threat, its size and proximity warrant occasional monitoring, especially due to its near-resonant orbital characteristics with Earth.
+"""
+        },
+        {
+            "name": "Ryugu",
+            "slug": "162173_ryugu",
+            "desc": """
+Ryugu is a C-type asteroid with a diameter of ~900 meters. Its surface was sampled by the Japanese Hayabusa2 mission, which returned material to Earth in 2020. Ryugu’s structure is porous, with evidence of hydrated minerals suggesting early solar system water content. Though not a threat, Ryugu is critical for understanding asteroid cohesion and formation. It provides benchmarks for how weakly bound rubble piles behave under solar radiation and spin-up forces that might eventually lead to fragmentation.
+"""
+        },
+        {
+            "name": "Ganymed",
+            "slug": "1036_ganymed",
+            "desc": """
+Ganymed is the largest known near-Earth asteroid at over 35 km in diameter. Although its orbit keeps it safely distant from Earth, its mass and volume make it a keystone object for planetary science and impact modeling. Ganymed is also of interest due to its spectral similarities with inner belt asteroids, suggesting cross-region migration in the early solar system. Its observations contribute to long-term risk assessments of exceptionally massive NEOs.
+"""
+        },
+        {
+            "name": "Phaethon",
+            "slug": "3200_phaethon",
+            "desc": """
+Phaethon is an unusual near-Earth object in that it behaves like a hybrid asteroid-comet. It is the parent body of the Geminid meteor shower, and its extremely close perihelion (~0.14 AU) causes it to shed dust like a comet. At 5.1 km in diameter, Phaethon is unusually large for a meteor-shower progenitor. Its blue color and high thermal stress cycling make it a fascinating subject for surface evolution studies. While not immediately hazardous, its orbital characteristics put it under regular review by planetary defense programs.
+"""
+        },
+        {
+            "name": "1998 OR2",
+            "slug": "52768_1998_or2",
+            "desc": """
+1998 OR2 is a stony asteroid approximately 2.1 kilometers in diameter that made a close approach in April 2020 at ~6.3 million km. It is one of the largest potentially hazardous asteroids (PHAs) due to its size and Earth-crossing orbit. Its reflective surface and stable rotation make it ideal for radar observations and shape modeling. While currently not on a collision course, its orbital uncertainty remains under refinement, especially beyond the 2100s. It serves as a training ground for impact mitigation strategies and ground-based telescopic coordination.
+"""
+        },
+    ]
+
+   
