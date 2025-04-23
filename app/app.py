@@ -192,4 +192,13 @@ Phaethon is an unusual near-Earth object in that it behaves like a hybrid astero
         },
     ]
 
-   
+    for i, asteroid in enumerate(asteroid_data):
+        col1, col2 = st.columns(2)
+
+        if i % 2 == 0:
+            with col1:
+                components.iframe(f"https://eyes.nasa.gov/apps/asteroids/#/{asteroid['slug']}", height=500)
+            with col2:
+                st.markdown(f"### 🛰️ Asteroid Profile: **{asteroid['name']}**")
+                st.markdown(f"<div style='text-align: justify; line-height: 1.6;'>{asteroid['desc']}</div>", unsafe_allow_html=True)
+
