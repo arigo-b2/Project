@@ -15,21 +15,22 @@ def get_asteroid_data() -> list:
             "name": "Bennu",
             "slug": "101955_bennu",
             "desc": """
-    Bennu is a carbonaceous near-Earth asteroid about 490 meters in diameter and rich in primitive organic material. It orbits the Sun every 1.2 years and has a very Earth-like orbit, placing it in the Apollo group of asteroids.  
-    Bennu is classified as a potentially hazardous asteroid (PHA) due to its high impact probability (1 in 1750 by 2300) and close Earth flybys, particularly in the late 2100s.  
-    What makes Bennu remarkable is its role in planetary science—NASA’s OSIRIS-REx mission successfully collected samples from its surface in 2020, returning them to Earth in 2023. These samples are helping scientists understand the early solar system.  
-    Bennu rotates once every 4.3 hours and has a "rubble pile" structure with loosely bound rocks and low density. A potential impact with Bennu would release energy equivalent to 1,200 megatons of TNT.
+    Asteroid 101955 Bennu is a small, carbon-rich near-Earth object roughly 500 meters wide at its equator — just about the height of the Empire State Building. Discovered in 1999, Bennu was selected as the target of NASA’s OSIRIS-REx mission, which successfully collected a sample from the asteroid’s surface and returned it to Earth in 2023. Though it poses no immediate danger, Bennu's composition and dynamic orbit make it a crucial object for studying the early solar system and evaluating asteroid impact risks (NASA, 2024).
+    <br><br>
+    Bennu is believed to have broken off from a much larger carbonaceous asteroid between 700 million and 2 billion years ago, most likely in the main asteroid belt between Mars and Jupiter. Its journey to a near-Earth orbit was guided by gravitational interactions with the giant planets and the Yarkovsky effect — a small but persistent force caused by the re-emission of solar heat. When NASA’s OSIRIS-REx spacecraft collected its sample, scientists were surprised to find the asteroid's surface so loosely packed that the spacecraft would have sunk into it had it not fired its thrusters to retreat. This revealed that Bennu’s surface behaves more like a loosely bound rubble pile than a solid rock.
     <br><br>
     Read More: <a href="https://science.nasa.gov/solar-system/asteroids/101955-bennu/facts/">https://science.nasa.gov/solar-system/asteroids/101955-bennu/facts/</a>
     """
         },   
         {
-            "name": "Florence",
-            "slug": "3122_florence",
+            "name": "Didymos",
+            "slug": "65803_didymos",
             "desc": """
-    Florence is one of the largest known near-Earth asteroids, measuring a massive 4.4 kilometers in diameter. It passed safely by Earth in 2017 at a distance of 7 million km but remains a significant object due to its sheer size and mass.  
-    Florence is particularly interesting because it has two small moons, making it one of the few triple asteroid systems ever observed in the near-Earth population. Its rotation period is about 2.4 hours, and its surface composition suggests a stony S-type asteroid.  
-    While Florence currently poses no impact threat, its size gives it the potential to cause global-scale devastation in the extremely unlikely case of an Earth impact. Studies of Florence help refine radar imaging and orbital mechanics models for large NEOs.
+    Asteroid 65803 Didymos is a near-Earth object belonging to the Apollo group, known for its Earth-crossing orbit and binary configuration. The primary body, roughly 780 meters in diameter, is orbited by a smaller moonlet named Dimorphos, measuring about 160 meters. Though not considered a threat, the Didymos system passes close to Earth on a regular basis — within 0.05 AU during some encounters. These orbital characteristics place Didymos in a key category of objects for planetary risk modeling: moderately sized, dynamically active, and periodically proximal to Earth. As such, Didymos is a high-priority target for long-term observation and contingency planning within the context of asteroid impact hazard assessment (NASA, 2024).
+    <br><br>
+    Didymos is particularly interesting from a risk analysis standpoint due to its rapid rotation, elongated orbit, and binary structure. The primary asteroid completes one rotation every 2.26 hours, a spin rate fast enough to influence its shape — likely giving rise to the equatorial ridge observed in radar images. This top-like morphology, shared with several other rapidly rotating asteroids, suggests mass redistribution over time and points to a delicate gravitational balance at the surface. Such loosely bound “rubble pile” structures are common in near-Earth objects and pose significant challenges in deflection scenarios: too much force could fragment the body rather than shift its trajectory, complicating mitigation outcomes. Understanding Didymos's internal composition and structural stability is essential for modeling how similar bodies would respond to kinetic or nuclear deflection methods.
+    <br><br>
+    Read More: <a href=https://science.nasa.gov/solar-system/asteroids/didymos/">https://science.nasa.gov/solar-system/asteroids/didymos/</a>
     """
         },
         {
@@ -44,48 +45,14 @@ def get_asteroid_data() -> list:
     """
         },
         {
-            "name": "Didymos",
-            "slug": "65803_didymos",
-            "desc": """
-    Didymos is a binary asteroid system consisting of a primary asteroid (~780 meters) and a moonlet called Dimorphos (~160 meters). It orbits the Sun every 2.1 years and is a member of the Apollo group of near-Earth asteroids.  
-    Didymos gained global attention as the target of NASA’s DART mission (2022)—the first real-world test of asteroid deflection. DART successfully impacted Dimorphos, shortening its orbital period by 33 minutes, proving that kinetic impactors can alter asteroid trajectories.  
-    The Didymos system is a crucial proof-of-concept for planetary defense technologies. Its binary nature also provides rare insight into tidal forces, mutual orbital evolution, and surface cohesion in small bodies.  
-    While Didymos itself is not a threat, its configuration and accessibility make it one of the most important objects for long-term planetary risk reduction studies.
-    """
-        },
-        {
-            "name": "Toutatis",
-            "slug": "4179_toutatis",
-            "desc": """
-    Toutatis is a highly elongated asteroid (~4.5 km long) with a tumbling, chaotic rotation that makes it one of the most unique objects observed. It passed Earth at a safe distance multiple times and was extensively imaged by radar and the Chang’e 2 mission. Its irregular motion provides valuable data on gravitational torques and non-uniform mass distribution in NEOs. While not a current threat, its size and proximity warrant occasional monitoring, especially due to its near-resonant orbital characteristics with Earth.
-    """
-        },
-        {
-            "name": "Ryugu",
-            "slug": "162173_ryugu",
-            "desc": """
-    Ryugu is a C-type asteroid with a diameter of ~900 meters. Its surface was sampled by the Japanese Hayabusa2 mission, which returned material to Earth in 2020. Ryugu’s structure is porous, with evidence of hydrated minerals suggesting early solar system water content. Though not a threat, Ryugu is critical for understanding asteroid cohesion and formation. It provides benchmarks for how weakly bound rubble piles behave under solar radiation and spin-up forces that might eventually lead to fragmentation.
-    """
-        },
-        {
-            "name": "Ganymed",
-            "slug": "1036_ganymed",
-            "desc": """
-    Ganymed is the largest known near-Earth asteroid at over 35 km in diameter. Although its orbit keeps it safely distant from Earth, its mass and volume make it a keystone object for planetary science and impact modeling. Ganymed is also of interest due to its spectral similarities with inner belt asteroids, suggesting cross-region migration in the early solar system. Its observations contribute to long-term risk assessments of exceptionally massive NEOs.
-    """
-        },
-        {
             "name": "Phaethon",
             "slug": "3200_phaethon",
             "desc": """
-    Phaethon is an unusual near-Earth object in that it behaves like a hybrid asteroid-comet. It is the parent body of the Geminid meteor shower, and its extremely close perihelion (~0.14 AU) causes it to shed dust like a comet. At 5.1 km in diameter, Phaethon is unusually large for a meteor-shower progenitor. Its blue color and high thermal stress cycling make it a fascinating subject for surface evolution studies. While not immediately hazardous, its orbital characteristics put it under regular review by planetary defense programs.
-    """
-        },
-        {
-            "name": "1998 OR2",
-            "slug": "52768_1998_or2",
-            "desc": """
-    1998 OR2 is a stony asteroid approximately 2.1 kilometers in diameter that made a close approach in April 2020 at ~6.3 million km. It is one of the largest potentially hazardous asteroids (PHAs) due to its size and Earth-crossing orbit. Its reflective surface and stable rotation make it ideal for radar observations and shape modeling. While currently not on a collision course, its orbital uncertainty remains under refinement, especially beyond the 2100s. It serves as a training ground for impact mitigation strategies and ground-based telescopic coordination.
+    Asteroid 3200 Phaethon occupies a unique position in planetary defense discussions due to its highly eccentric orbit, unexpected activity near the Sun, and its role as the parent body of the Geminid meteor shower. At approximately 5.4 kilometers wide, Phaethon is larger than most near-Earth objects typically associated with meteor showers. While its current orbit does not pose an immediate impact risk, Phaethon is classified as a potentially hazardous asteroid due to its size and its Earth-crossing trajectory. Given its extreme solar exposure, highly elongated orbit, and dynamic behavior, Phaethon represents a complex object that could evolve unpredictably over time (NASA, 2023).
+    <br><br>
+    One of the primary concerns regarding Phaethon is its apparent structural instability. Though initially believed to be a dormant, dust-shedding asteroid, new evidence from NASA’s SOHO and STEREO missions indicates that Phaethon’s comet-like tail is not made of dust, but of vaporized sodium gas released from its surface under extreme heat. This suggests that Phaethon may be experiencing internal stress or volatile-driven activity, even without ice — challenging assumptions about what triggers mass loss in small bodies. The presence of a large meteoroid stream (the Geminids), which Phaethon alone cannot replenish in its current state, strongly implies that a major surface disruption occurred in the recent past, possibly from rapid rotation or thermal fracturing. If such an event were to recur, it could alter Phaethon’s trajectory or produce hazardous debris fields in Earth’s orbital path.
+    <br><br>
+    Read More: <a href="https://www.nasa.gov/solar-system/asteroids-comet-like-tail-is-not-made-of-dust-solar-observatories-reveal/">https://www.nasa.gov/solar-system/asteroids-comet-like-tail-is-not-made-of-dust-solar-observatories-reveal/</a>
     """
         },
     ]

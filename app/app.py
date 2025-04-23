@@ -18,7 +18,7 @@ st.title("☄️ Deep Impact: Asteroid Risk Intelligence Dashboard")
 st.markdown("Use machine learning to estimate the potential risk of a Near-Earth Object (NEO) based on its physical parameters.")
 
 # Tabs
-tab1, tab2 = st.tabs(["🛰️ Live Risk Prediction", "📡 Top 10 Asteroid Visuals and Profiles"])
+tab1, tab2 = st.tabs(["🛰️ Live Risk Prediction", "📡 Top 5 Asteroid Visuals and Profiles"])
 
 with tab1:
     # Input: shown in meters / m/s
@@ -79,21 +79,23 @@ with tab1:
 
     # Physics-based explanation
     interpretation = f"""
-    Based on the input parameters — a **velocity of {velocity_mps:,.2f} m/s**, an **absolute magnitude of {magnitude:.2f}**, and an **average diameter of {diameter_m:,.2f} meters**, the asteroid’s **kinetic energy** has been estimated using its average size and speed. This results in a predicted **risk score of {predicted_risk:.8f}**, which reflects the potential severity of impact if such an object were heading toward Earth. Given its physical characteristics, this asteroid could carry significant momentum — and depending on its composition, entry angle, and atmospheric interaction, it may either disintegrate or survive entry and cause considerable damage. The object is classified as a **{risk_category}** risk under the assumption of an Earth-impacting orbit. {risk_summary_line}
+    Based on the input parameters — a **velocity of {velocity_mps:,.2f} m/s**, an **absolute magnitude of {magnitude:.2f}**, and an **average diameter of {diameter_m:,.2f} meters**, the asteroid’s **kinetic energy** has been estimated using its average size and speed. This results in a predicted **risk score of {predicted_risk:.8f}**, which reflects the potential severity of impact if such an object were heading toward Earth. Given its physical characteristics, this asteroid could carry significant momentum — and depending on its composition, entry angle, and atmospheric interaction, it may either disintegrate or survive entry and cause considerable damage. The object is classified as a **{risk_category}** risk under the assumption of an Earth-impacting orbit. {risk_summary_line}\n\n
     """
 
     # Display: side by side
     st.markdown("---")
-    left, right = st.columns([1, 4])
+    left, right = st.columns([1, 2])
+    # left, right = st.columns(2)
+
     with left:
-        st.subheader("☄️ Risk Level")
-        st.metric("Classification", risk_category)
+        st.subheader("☄️ Risk Level Classification")
+        st.metric("Category", risk_category)
     with right:
         st.subheader("🔭 Risk Assessment")
         st.markdown(interpretation)
 
     # NASA visual
-    st.markdown("### 🌌 NASA Asteroid 3D Viewer")
+    st.markdown("### 🌌 NASA Asteroid Watch: The Next Five Closest Approaches to Earth")
     components.iframe("https://eyes.nasa.gov/apps/asteroids/#/watch/", height=700)
 
     # Two iframe views
@@ -109,8 +111,6 @@ with tab1:
     
 
 with tab2:
-    st.subheader("🪐 Top 10 Asteroid Visualisations and Detailed Profiles")
-
     asteroid_data = get_asteroid_data()
     for i, asteroid in enumerate(asteroid_data):
         col1, col2 = st.columns(2)
