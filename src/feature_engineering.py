@@ -2,7 +2,9 @@ import os
 import pandas as pd
 import numpy as np
 from sklearn.preprocessing import MinMaxScaler
+from dotenv import load_dotenv
 
+load_dotenv()
 DATA_PATH_RAW = os.getenv("DATA_PATH_RAW")
 DATA_PATH_PROCESSED = os.getenv("DATA_PATH_PROCESSED")
 
