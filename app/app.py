@@ -61,3 +61,12 @@ with tab1:
             return "🔴 High"
 
     risk_category = interpret_risk(predicted_risk)
+
+    # Risk-specific closing line
+    risk_conclusions = {
+        "🟢 Very Low": "This means the object lacks sufficient mass and velocity to pose any credible danger, even in the event of an Earth-crossing orbit.",
+        "🟡 Low": "This means the object is relatively harmless under most scenarios, but should still be observed in case of future orbital shifts or Earth resonance.",
+        "🟠 Elevated": "This means the object could become hazardous under the right conditions — such as a shallow atmospheric entry angle or a trajectory leading toward densely populated areas.",
+        "🔴 High": "This means that if the object were on a collision course with Earth, it would likely retain enough energy to cause widespread devastation upon impact, especially in vulnerable regions."
+    }
+    risk_summary_line = risk_conclusions[risk_category]
