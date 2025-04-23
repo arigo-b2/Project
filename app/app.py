@@ -89,3 +89,15 @@ with tab1:
     # NASA visual
     st.markdown("### 🌌 NASA Asteroid 3D Viewer")
     components.iframe("https://eyes.nasa.gov/apps/asteroids/#/watch/", height=700)
+
+    # Two iframe views
+    st.markdown("### 🌌 Asteroid Views")
+    col1, col2 = st.columns(2)
+    with col1:
+        st.markdown("**🌠 Asteroid 2025 BP6 Close Approach**")
+        components.iframe("https://eyes.nasa.gov/apps/asteroids/#/2025_bp6?time=2025-01-25T23:27:43.516+00:00&rate=1", height=600)
+    with col2:
+        st.markdown("**🌎 Planet Earth**")
+        components.iframe("https://eyes.nasa.gov/apps/asteroids/#/planets/earth", height=600)
+    st.markdown("---")
+    
