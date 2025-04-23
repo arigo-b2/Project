@@ -12,3 +12,5 @@ st.set_page_config(page_title="Deep Impact: Asteroid Risk Predictor", layout="wi
 st.title("☄️ Deep Impact: Asteroid Risk Intelligence Dashboard")
 st.markdown("Use machine learning to estimate the potential risk of a Near-Earth Object (NEO) based on its physical parameters.")
 
+# Tabs
+tab1, tab2 = st.tabs(["🛰️ Live Risk Prediction", "📡 Top 10 Asteroid Visuals and Profiles"])
