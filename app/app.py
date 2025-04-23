@@ -33,3 +33,14 @@ with tab1:
 
     # Calculate kinetic energy (proportional proxy)
     kinetic_energy = (diameter_km ** 3) * (velocity_kms ** 2)
+
+    # Manual scaling
+    def scale(val, min_val, max_val):
+        return (val - min_val) / (max_val - min_val)
+
+    features_scaled = np.array([
+        scale(velocity_kms, 0, 40),
+        scale(magnitude, 10, 35),
+        scale(diameter_km, 0.01, 1.0),
+        scale(kinetic_energy, 0, 100)
+    ]).reshape(1, -1)
