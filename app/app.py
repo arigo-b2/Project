@@ -15,7 +15,25 @@ model = joblib.load("models/rf_risk_model.pkl")
 # Page settings
 st.set_page_config(page_title="Deep Impact: Asteroid Risk Predictor", layout="wide", page_icon="☄️")
 st.title("☄️ Deep Impact: Asteroid Risk Intelligence Dashboard")
-st.markdown("Use machine learning to estimate the potential risk of a Near-Earth Object (NEO) based on its physical parameters.")
+st.markdown(
+    """
+    <div style='
+        background-color: #161b22;
+        padding: 20px;
+        border-radius: 10px;
+        border-left: 5px solid #4FC3F7;
+        font-size: 16px;
+        line-height: 1.6;
+        color: #dddddd;
+    '>
+        <strong>Welcome to Deep Impact</strong> — a machine learning–powered dashboard for analyzing the potential threat posed by Near-Earth Objects (NEOs).
+        This tool predicts a kinetic-energy–based risk score using inputs like velocity, magnitude, and diameter, simulating how catastrophic an asteroid would be if it were on a collision course with Earth.
+        The project uses real asteroid parameters, physics-based approximations of impact energy, and a trained Random Forest model to classify threat levels ranging from negligible to highly hazardous.
+        Use the form below to test out hypothetical asteroid scenarios and compare their outcomes with real celestial objects tracked by NASA. 🌎🛰️ """,
+    unsafe_allow_html=True
+)
+
+st.markdown("<div style='margin-top: 30px;'></div>", unsafe_allow_html=True)
 
 # Tabs
 tab1, tab2 = st.tabs(["🛰️ Live Risk Prediction", "📡 Top 5 Asteroid Visuals and Profiles"])
@@ -85,7 +103,6 @@ with tab1:
     # Display: side by side
     st.markdown("---")
     left, right = st.columns([1, 2])
-    # left, right = st.columns(2)
 
     with left:
         st.subheader("☄️ Risk Level Classification")
@@ -94,19 +111,28 @@ with tab1:
         st.subheader("🔭 Risk Assessment")
         st.markdown(interpretation)
 
+    st.markdown("---")
+    
     # NASA visual
-    st.markdown("### 🌌 NASA Asteroid Watch: The Next Five Closest Approaches to Earth")
-    components.iframe("https://eyes.nasa.gov/apps/asteroids/#/watch/", height=700)
+    intro_col, iframe_col = st.columns([1, 2])
 
-    # Two iframe views
-    st.markdown("### 🌌 Asteroid Views")
-    col1, col2 = st.columns(2)
-    with col1:
-        st.markdown("**🌠 Asteroid 2025 BP6 Close Approach**")
-        components.iframe("https://eyes.nasa.gov/apps/asteroids/#/2025_bp6?time=2025-01-25T23:27:43.516+00:00&rate=1", height=600)
-    with col2:
-        st.markdown("**🌎 Planet Earth**")
-        components.iframe("https://eyes.nasa.gov/apps/asteroids/#/planets/earth", height=600)
+    with intro_col:
+        st.markdown("### 🌌 About the Project")
+        st.markdown(
+            """
+            Welcome to **Deep Impact** — a machine learning–powered dashboard for analyzing the potential threat posed by Near-Earth Objects (NEOs).  
+
+            This tool predicts a kinetic-energy–based risk score using inputs like velocity, magnitude, and diameter, simulating how catastrophic an asteroid would be **if** it were on a collision course with Earth.  
+
+            The project uses real asteroid parameters, physics-based approximations of impact energy, and a trained Random Forest model to classify threat levels ranging from negligible to highly hazardous.  
+
+            Use the form above to test out various hypothetical asteroid scenarios and compare their outcomes with real celestial objects tracked by NASA.
+            """
+        )
+
+    with iframe_col:
+        components.iframe("https://eyes.nasa.gov/apps/asteroids/#/watch/", height=700)
+
     st.markdown("---")
     
 
