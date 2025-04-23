@@ -101,3 +101,6 @@ with tab1:
         components.iframe("https://eyes.nasa.gov/apps/asteroids/#/planets/earth", height=600)
     st.markdown("---")
     
+
+with tab2:
+    st.subheader("🪐 Top 10 Asteroid Visualisations and Detailed Profiles")
