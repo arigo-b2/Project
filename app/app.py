@@ -75,3 +75,13 @@ with tab1:
     interpretation = f"""
     Based on the input parameters — a **velocity of {velocity_mps:,.2f} m/s**, an **absolute magnitude of {magnitude:.2f}**, and an **average diameter of {diameter_m:,.2f} meters**, the asteroid’s **kinetic energy** (proportional to volume × velocity²) has been estimated using its average size and speed. This results in a predicted **risk score of {predicted_risk:.8f}**, which reflects the potential severity of impact if such an object were heading toward Earth. Given its physical characteristics, this asteroid could carry significant momentum — and depending on its composition, entry angle, and atmospheric interaction, it may either disintegrate or survive entry and cause considerable damage. The object is classified as a **{risk_category}** risk under the assumption of an Earth-impacting orbit. {risk_summary_line}
     """
+
+    # Display: side by side
+    st.markdown("---")
+    left, right = st.columns([1, 4])
+    with left:
+        st.subheader("☄️ Risk Level")
+        st.metric("Classification", risk_category)
+    with right:
+        st.subheader("🔭 Risk Assessment")
+        st.markdown(interpretation)
