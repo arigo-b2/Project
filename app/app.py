@@ -44,3 +44,20 @@ with tab1:
         scale(diameter_km, 0.01, 1.0),
         scale(kinetic_energy, 0, 100)
     ]).reshape(1, -1)
+
+    # Predict risk
+    log_risk_score = model.predict(features_scaled)[0]
+    predicted_risk = np.expm1(log_risk_score)
+
+    # Interpret risk
+    def interpret_risk(score):
+        if score < 1e-5:
+            return "🟢 Very Low"
+        elif score < 1e-3:
+            return "🟡 Low"
+        elif score < 1e-2:
+            return "🟠 Elevated"
+        else:
+            return "🔴 High"
+
+    risk_category = interpret_risk(predicted_risk)
