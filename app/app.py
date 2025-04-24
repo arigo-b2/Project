@@ -31,8 +31,6 @@ st.markdown(
     Use the form below to experiment with hypothetical asteroid scenarios and explore how their impact profiles compare to those of real NEOs monitored by NASA. ☄️🛰️
 
     """,
-    
- 
     unsafe_allow_html=True
 )
 
