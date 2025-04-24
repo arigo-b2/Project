@@ -26,7 +26,7 @@ st.markdown(
         line-height: 1.6;
         color: #dddddd;
     '>  
-    <strong>Welcome to Deep Impact</strong> — a machine learning–powered dashboard for analyzing the potential threat posed by Near-Earth Objects (NEOs).
+    <strong>Welcome to Deep Impact</strong> — a machine learning–powered dashboard for analyzing the potential threat posed by asteroids.
     This tool estimates a kinetic-energy–based risk score using user-provided inputs such as velocity, absolute magnitude, and diameter — simulating the projected impact effects of an asteroid assuming a direct Earth-bound trajectory. The model leverages real-world asteroid data, applies physics-based impact estimations, and uses a trained Random Forest regressor to classify the object into intuitive threat levels ranging from negligible to highly hazardous.
     Use the form below to experiment with hypothetical asteroid scenarios and explore how their impact profiles compare to those of real NEOs monitored by NASA. ☄️🛰️
 
@@ -94,11 +94,22 @@ with tab1:
         "🟠 Elevated": "This means the object could become hazardous under the right conditions — such as a shallow atmospheric entry angle or a trajectory leading toward densely populated areas.",
         "🔴 High": "This means that if the object were on a collision course with Earth, it would likely retain enough energy to cause widespread devastation upon impact, especially in vulnerable regions."
     }
+
+    # Custom risk-specific interpretation line
+    risk_physics_interpretation = {
+        "🟢 Very Low": "Given its relatively low velocity and small diameter, this asteroid would likely be unable to penetrate the Earth's atmosphere. It would lose most of its energy to atmospheric drag and disintegrate at high altitudes, posing minimal risk to ground-level infrastructure or life.",
+        "🟡 Low": "With modest size and velocity, this asteroid may partially survive atmospheric entry, but would likely fragment at high altitudes due to thermal stress and pressure differences. While it could produce a small airburst or sonic boom, the likelihood of ground impact or substantial damage remains very low.",
+        "🟠 Elevated": "Due to its larger size and kinetic energy, this asteroid could survive atmospheric entry, especially if composed of dense materials like metal or rock. Upon entry, it might decelerate but remain intact enough to reach the ground, causing localized impact effects such as shockwaves, crater formation, or structural damage in populated zones. Its threat potential increases significantly if its entry angle is shallow or its trajectory intersects urban regions.",
+        "🔴 High": "This asteroid possesses substantial mass and velocity, making it capable of withstanding intense aerodynamic heating during atmospheric entry. Its kinetic energy would be largely retained upon descent, allowing it to impact the Earth's surface with catastrophic force. Depending on the location and composition, it could lead to regional-scale destruction, including shockwaves, thermal radiation, fires, and long-lasting environmental effects."
+    }
+
+    # Combine everything into the final interpretation
     risk_summary_line = risk_conclusions[risk_category]
+    risk_interpretation = risk_physics_interpretation[risk_category]
 
     # Physics-based explanation
     interpretation = f"""
-    Based on the input parameters — a **velocity of {velocity_mps:,.2f} m/s**, an **absolute magnitude of {magnitude:.2f}**, and an **average diameter of {diameter_m:,.2f} meters**, the asteroid’s **kinetic energy** has been estimated using its average size and speed. This results in a predicted **risk score of {predicted_risk:.8f}**, which reflects the potential severity of impact if such an object were heading toward Earth. Given its physical characteristics, this asteroid could carry significant momentum — and depending on its composition, entry angle, and atmospheric interaction, it may either disintegrate or survive entry and cause considerable damage. The object is classified as a **{risk_category}** risk under the assumption of an Earth-impacting orbit. {risk_summary_line}\n\n
+    Based on the input parameters — a **velocity of {velocity_mps:,.2f} m/s**, an **absolute magnitude of {magnitude:.2f}**, and an **average diameter of {diameter_m:,.2f} meters**, the asteroid’s **kinetic energy** has been estimated using its average size and speed. This results in a predicted **risk score of {predicted_risk:.8f}**, which reflects the potential severity of impact if such an object were heading toward Earth. {risk_interpretation} The object is classified as a **{risk_category}** risk under the assumption of an Earth-impacting orbit. {risk_summary_line}\n\n
     """
 
     # Display: side by side
