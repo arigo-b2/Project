@@ -26,7 +26,7 @@ st.markdown(
         line-height: 1.6;
         color: #dddddd;
     '>  
-    <strong>Welcome to Deep Impact</strong> — a machine learning–powered dashboard for analyzing the potential threat posed by asteroids.
+    <strong>Welcome to Deep Impact</strong> — a machine learning powered dashboard for analyzing the potential threat posed by asteroids.
     This tool estimates a kinetic-energy–based risk score using user-provided inputs such as velocity, absolute magnitude, and diameter — simulating the projected impact effects of an asteroid assuming a direct Earth-bound trajectory. The model leverages real-world asteroid data, applies physics-based impact estimations, and uses a trained Random Forest regressor to classify the object into intuitive threat levels ranging from negligible to highly hazardous.
     Use the form below to experiment with hypothetical asteroid scenarios and explore how their impact profiles compare to those of real NEOs monitored by NASA. ☄️🛰️
 
