@@ -121,15 +121,23 @@ with tab1:
         st.markdown("### 🌌 About the Project")
         st.markdown(
             """
-            Welcome to **Deep Impact** — a machine learning–powered dashboard for analyzing the potential threat posed by Near-Earth Objects (NEOs).  
+            <div style='text-align: justify; line-height: 1.7; color: #dddddd;'>
 
-            This tool predicts a kinetic-energy–based risk score using inputs like velocity, magnitude, and diameter, simulating how catastrophic an asteroid would be **if** it were on a collision course with Earth.  
+            <strong>Deep Impact</strong> is a machine learning–powered dashboard built to explore, interpret, and communicate the potential threat of Near-Earth Objects (NEOs) — celestial bodies like asteroids and comets whose orbits bring them close to Earth’s neighborhood.  
 
-            The project uses real asteroid parameters, physics-based approximations of impact energy, and a trained Random Forest model to classify threat levels ranging from negligible to highly hazardous.  
+            This project was developed as part of an applied data science initiative, combining astronomy, physics, and machine learning to simulate what could happen if an asteroid were on a direct collision course with our planet. It serves both as a scientific tool and a public education interface — helping users understand how asteroid parameters such as velocity, brightness (absolute magnitude), and size contribute to the severity of impact events.  
 
-            Use the form above to test out various hypothetical asteroid scenarios and compare their outcomes with real celestial objects tracked by NASA.
-            """
+            Using a trained Random Forest regression model, the system predicts a kinetic energy–based risk score, approximating how much energy an object would release upon impact. This score is then translated into qualitative threat levels, providing intuitive insight into what might otherwise be abstract astrophysical calculations.  
+
+            Built with real orbital and physical data from NASA’s Near-Earth Object database, <em>Deep Impact</em> empowers users to experiment with hypothetical asteroid scenarios — tweaking input values and seeing how even subtle changes in speed or size can lead to dramatically different risk classifications.  
+
+            Ultimately, this project aims to showcase the intersection of machine learning and planetary defense, while making space hazard analysis more accessible, engaging, and interactive for everyone. 🚀🌍
+            
+            </div>
+            """,
+            unsafe_allow_html=True
         )
+
 
     with iframe_col:
         components.iframe("https://eyes.nasa.gov/apps/asteroids/#/watch/", height=700)
