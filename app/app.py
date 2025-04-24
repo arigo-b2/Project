@@ -145,7 +145,7 @@ with tab1:
 
 
     with iframe_col:
-        components.iframe("https://eyes.nasa.gov/apps/asteroids/#/watch/", height=600)
+        components.iframe("https://eyes.nasa.gov/apps/asteroids/#/watch/", height=550)
 
     st.markdown("---")
     
