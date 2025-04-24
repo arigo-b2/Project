@@ -115,14 +115,19 @@ with tab1:
     st.markdown("---")
     
     # NASA visual
-    intro_col, iframe_col = st.columns([1, 2])
+    intro_col, iframe_col = st.columns([2, 2])
 
     with intro_col:
         st.markdown("### 🌌 About the Project")
         st.markdown(
             """
-            <div style='text-align: justify; line-height: 1.7; color: #dddddd;'>
-
+            <div style='
+                text-align: left;
+                padding-right: 30px;
+                font-size: 16px;
+                line-height: 1.7;
+                color: #dddddd;
+            '>
             <strong>Deep Impact</strong> is a machine learning–powered dashboard built to explore, interpret, and communicate the potential threat of Near-Earth Objects (NEOs) — celestial bodies like asteroids and comets whose orbits bring them close to Earth’s neighborhood.  
 
             This project was developed as part of an applied data science initiative, combining astronomy, physics, and machine learning to simulate what could happen if an asteroid were on a direct collision course with our planet. It serves both as a scientific tool and a public education interface — helping users understand how asteroid parameters such as velocity, brightness (absolute magnitude), and size contribute to the severity of impact events.  
@@ -140,7 +145,7 @@ with tab1:
 
 
     with iframe_col:
-        components.iframe("https://eyes.nasa.gov/apps/asteroids/#/watch/", height=700)
+        components.iframe("https://eyes.nasa.gov/apps/asteroids/#/watch/", height=600)
 
     st.markdown("---")
     
