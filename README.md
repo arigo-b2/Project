@@ -4,12 +4,6 @@
 
 This project uses real-world NASA Near-Earth Object (NEO) data to build a machine learning model that estimates the threat level posed by asteroids approaching Earth. Using physics-inspired features such as kinetic energy, brightness, and estimated diameter, the model predicts a log-transformed threat score representing potential impact severity.
 
-
-### 🚀 Objective
-To estimate and prioritise asteroid collision risk based on orbital and physical parameters using a supervised regression model.
-
-
-
 ### 🧠 Current Features
 - Collects and processes real asteroid data using the NASA NeoWs API
 - Engineers physics-aware features such as kinetic energy and average size
