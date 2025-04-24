@@ -25,10 +25,14 @@ st.markdown(
         font-size: 16px;
         line-height: 1.6;
         color: #dddddd;
-    '>
-        <strong>Welcome to Deep Impact</strong> — a machine learning–powered dashboard for analyzing the potential threat posed by Near-Earth Objects (NEOs).
-        This tool predicts a kinetic-energy–based risk score using inputs like velocity, magnitude, and diameter, simulating how catastrophic an asteroid would be if it were on a collision course with Earth. The project uses real asteroid parameters, physics-based approximations of impact energy, and a trained Random Forest model to classify threat levels ranging from negligible to highly hazardous.
-        Use the form below to test out hypothetical asteroid scenarios and compare their outcomes with real celestial objects tracked by NASA. ☄️🛰️ """,
+    '>  
+    <strong>Welcome to Deep Impact</strong> — a machine learning–powered dashboard for analyzing the potential threat posed by Near-Earth Objects (NEOs).
+    This tool estimates a kinetic-energy–based risk score using user-provided inputs such as velocity, absolute magnitude, and diameter — simulating the projected impact effects of an asteroid assuming a direct Earth-bound trajectory. The model leverages real-world asteroid data, applies physics-based impact estimations, and uses a trained Random Forest regressor to classify the object into intuitive threat levels ranging from negligible to highly hazardous.
+    Use the form below to experiment with hypothetical asteroid scenarios and explore how their impact profiles compare to those of real NEOs monitored by NASA. ☄️🛰️
+
+    """,
+    
+ 
     unsafe_allow_html=True
 )
 
