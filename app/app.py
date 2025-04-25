@@ -126,7 +126,7 @@ with tab1:
     st.markdown("---")
     
     # NASA visual
-    intro_col, iframe_col = st.columns([2, 2])
+    intro_col, iframe_col = st.columns([1.7, 2.3])
 
     with intro_col:
         st.markdown("### 🌌 About the Project")
@@ -139,7 +139,7 @@ with tab1:
                 line-height: 1.7;
                 color: #dddddd;
             '>
-            <strong>Deep Impact</strong> is a machine learning–powered dashboard built to explore, interpret, and communicate the potential threat of Near-Earth Objects (NEOs) — celestial bodies like asteroids and comets whose orbits bring them close to Earth’s neighborhood.  
+            <strong>Deep Impact</strong> is a machine learning–powered dashboard built to explore, interpret, and communicate the potential threat of Near-Earth Objects (NEOs) — celestial bodies like asteroids and comets whose orbits bring them close to Earth’s neighborhood.  <br><br>
 
             This project was developed as part of an applied data science initiative, combining astronomy, physics, and machine learning to simulate what could happen if an asteroid were on a direct collision course with planet Earth. It serves both as a scientific tool and a public education interface — helping users understand how asteroid parameters such as velocity, brightness (absolute magnitude), and size contribute to the severity of impact events.  
 
@@ -148,15 +148,13 @@ with tab1:
             Built with real orbital and physical data from NASA’s Near-Earth Object database, <em>Deep Impact</em> empowers users to experiment with hypothetical asteroid scenarios — tweaking input values and seeing how even subtle changes in speed or size can lead to dramatically different risk classifications.  
 
             Ultimately, this project aims to showcase the intersection of machine learning and planetary defense, while making space hazard analysis more accessible, engaging, and interactive for everyone. 🚀🌍
-            
-            </div>
             """,
             unsafe_allow_html=True
         )
 
 
     with iframe_col:
-        components.iframe("https://eyes.nasa.gov/apps/asteroids/#/watch/", height=550)
+        components.iframe("https://eyes.nasa.gov/apps/asteroids/#/watch/", height=650)
 
     st.markdown("---")
     
