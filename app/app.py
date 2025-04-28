@@ -126,7 +126,7 @@ with tab1:
     st.markdown("---")
     
     # NASA visual
-    st.markdown("### 🌌 NASA Asteroid 3D Viewer: Next Five Closest Asteroid Approaches to Earth")
+    st.markdown("### 🌌 NASA Asteroid Interactive 3D Viewer: Next Five Closest Asteroid Approaches to Earth")
     components.iframe("https://eyes.nasa.gov/apps/asteroids/#/watch/", height=650)
 
 
