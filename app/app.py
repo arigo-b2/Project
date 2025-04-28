@@ -37,7 +37,7 @@ st.markdown(
 st.markdown("<div style='margin-top: 30px;'></div>", unsafe_allow_html=True)
 
 # Tabs
-tab1, tab2 = st.tabs(["🛰️ Live Risk Prediction", "📡 Top 5 Asteroid Visuals and Profiles"])
+tab1, tab2, tab3 = st.tabs(["🛰️ Live Risk Prediction", "📡 Top 5 Asteroid Visuals and Profiles", "🌌 About the Project"])
 
 with tab1:
     # Input: shown in meters / m/s
