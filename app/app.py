@@ -129,8 +129,6 @@ with tab1:
     st.markdown("### 🌌 NASA Asteroid 3D Viewer: Next Five Closest Asteroid Approaches to Earth")
     components.iframe("https://eyes.nasa.gov/apps/asteroids/#/watch/", height=650)
 
-    st.markdown("---")
-    
 
 with tab2:
     asteroid_data = get_asteroid_data()
@@ -151,7 +149,8 @@ with tab2:
             with col2:
                 components.iframe(f"https://eyes.nasa.gov/apps/asteroids/#/{asteroid['slug']}", height=500)
 
-        st.markdown("---")
+        if i!=len(asteroid_data)-1:
+            st.markdown("---")
 
 with tab3:
     st.markdown("### 🌌 About the Project")
@@ -169,8 +168,17 @@ with tab3:
         Model development emphasizes scientific accuracy, physical interpretability, and predictive robustness. The Random Forest model is selected for its ensemble-based approach, which captures complex, non-linear relationships between asteroid characteristics while resisting overfitting through variance reduction across decision trees. A logarithmic transformation of kinetic energy is employed as the target variable to accommodate the broad dynamic range of impact energies, from minor airbursts to globally significant collisions. Hyperparameter tuning is conducted via grid search and k-fold cross-validation, optimizing model parameters such as maximum tree depth, minimum samples per split, and the number of estimators to achieve a balance between model complexity and generalization ability. Evaluation using metrics such as the coefficient of determination (R²), mean absolute error (MAE), and root mean squared error (RMSE) confirms the model’s high predictive accuracy and stable behavior across validation sets. Feature importance analysis aligns with theoretical kinetic energy relationships, highlighting velocity as the dominant predictor, followed by diameter, both of which critically affect mass and energy calculations. Absolute magnitude provides secondary predictive value by constraining uncertainty in size estimation, especially for objects with incomplete observational profiles.
         <br><br>
         The dashboard, developed using the Streamlit framework, enables users to explore a wide range of hypothetical asteroid impact scenarios by adjusting physical input parameters and observing real-time updates to predicted kinetic energy outputs and hazard classifications. Through dynamic user interaction, the system illustrates fundamental astrophysical principles such as the sensitivity of impact severity to small changes in velocity and mass, reinforcing concepts like the quadratic velocity dependence of kinetic energy. Deep Impact demonstrates how machine learning models, when informed by domain-specific physics, can serve as effective, scalable tools for preliminary planetary defense analyses. The platform provides an accessible interface that bridges detailed scientific modeling with public understanding, offering users insight into the mechanisms driving asteroid impact threats. Future extensions of the project aim to incorporate additional orbital parameters such as eccentricity and inclination, material composition proxies, and probabilistic uncertainty modeling to refine risk predictions further and contribute to the ongoing development of space hazard assessment technologies. 🚀🌍
-        <br><br>
         """,
         unsafe_allow_html=True
     )
-    st.markdown("---")
+
+# Footer
+st.markdown(
+    """
+    <hr style="border: 1px solid #3E4145; margin-top: 50px; margin-bottom: 10px;">
+    <div style='text-align: center; font-size: 15px; color: #888888;'>
+        Made with 💫 by <strong>Arbina Gotame</strong> | Deep Impact Project
+    </div>
+    """,
+    unsafe_allow_html=True
+)
