@@ -157,7 +157,7 @@ with tab3:
     st.markdown(
         """
         <div style='
-            text-align: left;
+            text-align: justify;
             padding-right: 30px;
             font-size: 16px;
             line-height: 1.7;
