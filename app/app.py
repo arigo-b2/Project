@@ -177,7 +177,7 @@ st.markdown(
     """
     <hr style="border: 1px solid #3E4145; margin-top: 50px; margin-bottom: 10px;">
     <div style='text-align: center; font-size: 15px; color: #888888;'>
-        Made with ❤️ by <strong>Arbina Gotame</strong> | Deep Impact Project
+        Made with ❤️ by <strong>Arbina Gotame</strong> | Deep Impact
     </div>
     """,
     unsafe_allow_html=True
