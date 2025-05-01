@@ -33,4 +33,4 @@ This project uses real-world NASA Near-Earth Object (NEO) data to build a machin
 
 ### 🛰️ Credits
 Developed as part of an independent project to explore AI for planetary defense.  
-Data provided by NASA's Near-Earth Object Program.
+Data provided by NASA's Near-Earth Object API.
