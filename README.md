@@ -8,7 +8,7 @@ This project uses real-world NASA Near-Earth Object (NEO) data to build a machin
 - **Data Collection**: Fetches real asteroid datasets from the NASA Near Earth Object (NeoWs) API
 - **Feature Engineering**: Computes physics-inspired attributes such as:
     - Kinetic energy (volume × velocity²)
-    - Scaled absolute magnitude
+    - Scaled Absolute Magnitude
     - Normalized asteroid size
 - **Risk Prediction Model**:
     - Trains a Random Forest Regressor
