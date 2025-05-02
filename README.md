@@ -15,7 +15,7 @@ This project uses real-world NASA Near-Earth Object (NEO) data to build a machin
     - Predicts a log-transformed threat score representing impact severity
 - **Model Performance**:
     - Evaluated using MAE, RMSE, and R²
-    - Achieved R² ≈ 0.95 on unseen data
+    - Achieved R² ≈ 0.96 on unseen data
 - **Interactive Dashboard**:
     - Enter custom asteroid parameters (velocity, magnitude, diameter)
     - Receive real-time risk classification
